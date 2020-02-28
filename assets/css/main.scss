@@ -1,0 +1,68 @@
+$primary_color: rgba(200,200,200, 1);
+
+$text_color: rgb(112,112,112);
+
+$placholder_color: rgba(68,68,68, 0.13);
+
+body {
+  background-color: $primary_color;
+}
+
+.input_div {
+
+  text-align: center;
+
+  margin: 20vh auto auto;
+
+  input {
+    margin: 5vh auto;
+    display: block;
+    width: 60vw;
+    max-width: 600px;
+    font-size: 3rem;
+
+    outline: 0;
+    border: 0 rgba(208, 228, 242, .5);
+    border-bottom: 3px solid;
+
+    padding: 8px 0;
+    background-color: transparent;
+
+    color: $text_color;
+  }
+
+  input:hover {
+    border-color: rgba(68,68,68, 5);
+  }
+  input:focus {
+    border-color: rgba(68,68,68, 1);
+  }
+  input::-webkit-input-placeholder {
+    color: rgba(68,68,68, .13);
+  }
+}
+
+#print {
+  display: block;
+  margin: 5vh auto;
+  width: 60vw;
+  max-width: 600px;
+  height: 9vh;
+  background-color: transparent;
+  font-size: 50px;
+  color: rgba(68,68,68, .25);
+  border: 3px solid rgba(68,68,68, .25);
+  transition: .3s;
+  cursor: pointer;
+
+
+  &:hover:enabled {
+    color: $text_color;
+    border-color: rgba(68,68,68, 1);
+  }
+
+  &:disabled {
+    opacity: .3;
+    cursor: auto;
+  }
+}

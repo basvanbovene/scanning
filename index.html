@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Scanning</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="node_modules/izitoast/dist/css/iziToast.min.css">
+
+</head>
+<body>
+
+    <div class="input_div">
+        <form id="form">
+            <input type="text" id="repairnumber" placeholder="Repair nummer '123'" onKeyup="checkForm()" autofocus>
+            <input type="text" id="serialnumber" placeholder="Serienummer" onKeyup="checkForm()">
+
+            <input type="submit" id="print" value="PRINT" disabled>
+        </form>
+    </div>
+
+    <script>
+        var integer;
+
+        function checkForm() {
+
+            var inputs = document.getElementsByTagName('input');
+            var canSubmit = true;
+
+            for (var i = 0; i < inputs.length; i++) {
+                if (!inputs[i].value.length > 0) canSubmit = false;
+            }
+
+            document.getElementById("print").disabled = !canSubmit;
+            return true;
+
+        }
+    </script>
+
+    <script src="assets/js/DYMO.Label.Framework.latest.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="node_modules/izitoast/dist/js/iziToast.min.js" type="text/javascript"></script>
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
